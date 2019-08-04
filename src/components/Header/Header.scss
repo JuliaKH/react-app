@@ -1,13 +1,12 @@
 $header-color: #000;
 
 .header{
-
   background-color: $header-color;
   &__logo{
     max-width: 120px;
   }
 }
-.container{
+.header-container{
   display: flex;
   align-items: center;
   max-width: 1400px;
