@@ -4,6 +4,8 @@ import search from '../../assets/images/search.svg'
 
 class Search extends Component{
 
+    searchText = 'Search images...';
+
     state = { value: '' };
     onInputChange = (event) => {
         this.setState({ value: event.target.value })
@@ -18,6 +20,7 @@ class Search extends Component{
         return(
             <form className="search" onSubmit={this.onFormSubmit}>
                     <input type="text" className="search__input"
+                           placeholder={this.searchText}
                            value={this.state.value}
                            onChange={this.onInputChange}/>
                     <button type="submit" className="search__button"><img src={search} alt="search"/></button>

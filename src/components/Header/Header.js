@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import './Header.scss'
 import logo from '../../assets/images/logo.png'
 import Search from '../Search/Search'
+import Login from '../Login/Login'
 
 class Header extends Component{
 
@@ -12,6 +13,7 @@ class Header extends Component{
                 <div className="header-container">
                     <a href=""><img src={logo} alt="logo" className="header__logo"/></a>
                     <Search userSubmit={this.props.userSubmit} />
+                    <Login></Login>
                 </div>
             </header>
         )

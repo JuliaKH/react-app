@@ -7,12 +7,14 @@ const ImageList = (props) => {
     });
 
     return(
-        <div>
+        <section className="images">
             <div className="container">
-                {imgs}
+                <div className="images__list">
+                    {imgs}
+                </div>
             </div>
 
-        </div>
+        </section>
     )
 };
 

@@ -19,7 +19,6 @@ class App extends Component {
         return(
             <div>
                 <Header userSubmit={this.onSearchSubmit}/>
-                <span>Found: {this.state.images.length} images</span>
                 <ImageList foundImages={this.state.images} />
             </div>
 
