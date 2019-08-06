@@ -1,7 +1,7 @@
 import {ACTION_CHANGE_INPUT_VALUE} from "../index";
 
 const initialState ={
-    value: ''
+    value: 'Our state'
 };
 
 export const reducer = (state = initialState, action) => {
@@ -11,3 +11,8 @@ export const reducer = (state = initialState, action) => {
     }
     return state;
 };
+
+//default should be there
+
+
+//read about combineReducers

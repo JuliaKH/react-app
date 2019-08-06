@@ -16,6 +16,7 @@ class App extends Component {
             }
         });
         // console.log(response);
+        const copyOTargetArr= this.state.images.concat();
         this.setState({ images: response.data.results })
     };
     render() {
@@ -30,3 +31,7 @@ class App extends Component {
 }
 
 export default App
+
+
+//change search component into functional npm install redux-devtools-extension
+//React router Link
