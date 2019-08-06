@@ -13,7 +13,6 @@ const ImageList = (props) => {
                     {imgs}
                 </div>
             </div>
-
         </section>
     )
 };

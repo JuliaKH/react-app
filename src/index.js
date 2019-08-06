@@ -2,13 +2,18 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
 import './index.css'
-import {createStore} from "redux";
-ReactDOM.render(<App />, document.getElementById('root'));
+import {createStore, bindActionCreators} from "redux";
+import { Provider } from 'react-redux'
+import {reducer} from "./store/reducers";
 
+export const ACTION_CHANGE_INPUT_VALUE = 'ACTION_CHANGE_INPUT_VALUE';
 
-const image = (state = []) => state;
-const store = createStore(image);
+const store = createStore(reducer);
 
-store.subscribe(() => {
-    console.log(store.getState());
-});
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+);
+
