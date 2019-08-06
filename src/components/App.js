@@ -5,6 +5,7 @@ import ImageList from './ImageList/ImageList';
 
 class App extends Component {
     state = { images: [] };
+    // go into service
     onSearchSubmit = async (term) => {
         const response = await axios.get('https://api.unsplash.com/search/photos', {
             params: {
@@ -19,6 +20,7 @@ class App extends Component {
         this.setState({ images: response.data.results })
     };
     render() {
+        // const {images} = this.props
         return(
             <div>
                 <Header userSubmit={this.onSearchSubmit}/>
@@ -30,3 +32,4 @@ class App extends Component {
 }
 
 export default App
+// add connect to redux, get images from it

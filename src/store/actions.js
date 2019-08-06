@@ -1,4 +1,4 @@
-import { ACTION_CHANGE_INPUT_VALUE } from '../index'
+import { ACTION_CHANGE_INPUT_VALUE } from './actionTypes'
 
 export const changeValue = (newValue) => {
     return{

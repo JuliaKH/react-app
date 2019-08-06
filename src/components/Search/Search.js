@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './Search.scss'
 import search from '../../assets/images/search.svg'
-import {bindActionCreators} from "redux";
 import {changeValue} from "../../store/actions";
 import {connect} from "react-redux";
 
@@ -38,15 +37,15 @@ class Search extends Component{
     }
 }
 
-const putStateToProps = (state) => {
+const mapStateToProps = (state) => {
     return {
         value: state.value
     }
 };
-const putActionsToProps = (dispatch) => {
-    return{
-        changeValue: bindActionCreators(changeValue, dispatch)
-    }
+
+const mapDispatchToProps = {
+    changeValue: changeValue,
 };
-export default connect(putStateToProps, putActionsToProps)(Search);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);
 // export default Search
