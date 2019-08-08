@@ -31,7 +31,7 @@ class App extends Component {
     // };
 
     render() {
-        // const {images} = this.props
+        const {images} = this.props;
         return(
             <div>
                 {/*<Header userSubmit={this.onSearchSubmit}/>*/}
@@ -42,6 +42,16 @@ class App extends Component {
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        // items: state.items,
+        // hasErrored: state.itemsHasErrored,
+        // isLoading: state.itemsIsLoading
+        loading: state.loading,
+        images: state.images,
+        error: state.loading
+    };
+};
 
 const mapDispatchToProps = dispatch => {
     return {

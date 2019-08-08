@@ -22,9 +22,8 @@ export const onSearchSubmit = ( title ) => {
         axios
             .get('https://api.unsplash.com/search/photos', options)
             .then(res => {
-                dispatch(addImagesSuccess(res.data));
-                console.log(res.data);
-                console.log('456');
+                dispatch(addImagesSuccess(res.data.results));
+                console.log(res.data.results);
             })
             .catch(err => {
                 dispatch(addImagesFailure(err.message));
