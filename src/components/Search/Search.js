@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import './Search.scss'
 import search from '../../assets/images/search.svg'
-import {changeValue} from "../../store/actions";
-import {connect} from "react-redux";
+
 
 class Search extends Component{
 

@@ -1,30 +1,36 @@
-import {ACTION_CHANGE_INPUT_VALUE} from "./actionTypes";
+import {
+    ADD_IMAGES_SUCCESS,
+    ADD_IMAGES_FAILURE,
+    ADD_IMAGES_STARTED,
+} from '../store/actionTypes';
 
-import { combineReducers } from 'redux';
-import { items, itemsHasErrored, itemsIsLoading } from './items';
-
-
-const initialState ={
-    value: ''
+const initialState = {
+    loading: false,
+    images: [],
+    error: null
 };
 
-export const reducer = (state = initialState, action) => {
+export default function ImageReducer(state = initialState, action) {
     switch (action.type) {
-        case ACTION_CHANGE_INPUT_VALUE:
-            return {...state, value: action.payload};
-        default: return state;
-    }
-};
-
-export function items(state = [], action) {
-    switch (action.type) {
-        case 'ITEMS_FETCH_DATA_SUCCESS':
-            return action.items;
-
+        case ADD_IMAGES_STARTED:
+            return {
+                ...state,
+                loading: true
+            };
+        case ADD_IMAGES_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                error: null,
+                images: [...state.images, action.payload]
+            };
+        case ADD_IMAGES_FAILURE:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload.error
+            };
         default:
             return state;
     }
 }
-export default combineReducers({
-    items
-});
