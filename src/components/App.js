@@ -2,12 +2,6 @@ import React, { Component } from 'react'
 import Header from './Header/Header'
 import axios from "axios";
 import ImageList from './ImageList/ImageList';
-import Unsplash from 'unsplash-js';
-
-const unsplash = new Unsplash({
-    applicationId: "5110e0875d03049c42ef2483cf9a9ad53c6a0f46dd526e9ee18dca0c3c6a8f0b",
-    secret: "4d06872ad12bef5338ff8e64b9324d488905a04733fbe6e76ca5901ff889f8cf"
-});
 
 class App extends Component {
     state = { images: [] };
