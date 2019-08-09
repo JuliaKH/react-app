@@ -2,13 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/App'
 import './index.css'
-import {createStore} from "redux";
-ReactDOM.render(<App />, document.getElementById('root'));
+import { Provider } from 'react-redux'
+
+import store from "./store/store";
 
 
-const image = (state = []) => state;
-const store = createStore(image);
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.getElementById('root')
+);
 
-store.subscribe(() => {
-    console.log(store.getState());
-});

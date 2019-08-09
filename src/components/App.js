@@ -1,32 +1,46 @@
 import React, { Component } from 'react'
 import Header from './Header/Header'
-import axios from "axios";
 import ImageList from './ImageList/ImageList';
+import {onSearchSubmit} from "../store/actions";
+import connect from "react-redux/es/connect/connect";
 
 class App extends Component {
-    state = { images: [] };
-    onSearchSubmit = async (term) => {
-        const response = await axios.get('https://api.unsplash.com/search/photos', {
-            params: {
-                query: term,
-                per_page: 20
-            },
-            headers: {
-                Authorization: 'Client-ID 5110e0875d03049c42ef2483cf9a9ad53c6a0f46dd526e9ee18dca0c3c6a8f0b'
-            }
-        });
-        console.log(response);
-        this.setState({ images: response.data.results })
-    };
+    // state = { images: [] };
+    // go into service
+
     render() {
+        const {images} = this.props;
+        // console.log(images);
         return(
             <div>
-                <Header userSubmit={this.onSearchSubmit}/>
-                <ImageList foundImages={this.state.images} />
+                {/*<Header userSubmit={this.onSearchSubmit}/>*/}
+                <Header userSubmit={this.props.SearchSubmit}/>
+                <ImageList foundImages={images} />
             </div>
 
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        loading: state.loading,
+        images: state.images,
+        error: state.loading
+    };
+};
 
-export default App
+const mapDispatchToProps = dispatch => {
+    return {
+        SearchSubmit: todo => {
+            dispatch(onSearchSubmit(todo));
+        }
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App);
+
+// export default App
+// add connect to redux, get images from it
