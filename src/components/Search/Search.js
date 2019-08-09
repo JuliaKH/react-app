@@ -14,7 +14,7 @@ class Search extends Component{
     onFormSubmit = (event) => {
         event.preventDefault();
         this.props.userSubmit(this.state.value);
-        console.log(this.state.value);
+        // console.log(this.state.value);
     };
     render() {
         // console.log(this.props);

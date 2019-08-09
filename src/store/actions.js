@@ -9,7 +9,6 @@ import axios from 'axios';
 export const onSearchSubmit = ( title ) => {
     return dispatch => {
         dispatch(addImagesStarted());
-        console.log('123');
         const options = {
             params: {
                 query: title ,

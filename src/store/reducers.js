@@ -22,7 +22,8 @@ export default function ImageReducer(state = initialState, action) {
                 ...state,
                 loading: false,
                 error: null,
-                images: [...state.images, action.payload]
+                // images: [...state.images, action.payload]
+                images: Object.assign(state.images, action.payload)
             };
         case ADD_IMAGES_FAILURE:
             return {

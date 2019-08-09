@@ -5,38 +5,17 @@ import {onSearchSubmit} from "../store/actions";
 import connect from "react-redux/es/connect/connect";
 
 class App extends Component {
-    state = { images: [] };
+    // state = { images: [] };
     // go into service
-
-    // onSearchSubmit = (term) => {
-    //     const options = {
-    //         params: {
-    //             query: term,
-    //             per_page: 20
-    //         },
-    //         headers: {
-    //             Authorization: 'Client-ID 5110e0875d03049c42ef2483cf9a9ad53c6a0f46dd526e9ee18dca0c3c6a8f0b'
-    //         }
-    //     };
-    //     axios.get('https://api.unsplash.com/search/photos', options)
-    //         .then((response) => {
-    //             this.setState({
-    //                 images: response.data.results
-    //             });
-    //             console.log(this.state);
-    //         })
-    //             .catch((mes) => {
-    //                console.log(mes);
-    //             });
-    // };
 
     render() {
         const {images} = this.props;
+        // console.log(images);
         return(
             <div>
                 {/*<Header userSubmit={this.onSearchSubmit}/>*/}
                 <Header userSubmit={this.props.SearchSubmit}/>
-                <ImageList foundImages={this.state.images} />
+                <ImageList foundImages={images} />
             </div>
 
         )
@@ -44,9 +23,6 @@ class App extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        // items: state.items,
-        // hasErrored: state.itemsHasErrored,
-        // isLoading: state.itemsIsLoading
         loading: state.loading,
         images: state.images,
         error: state.loading
@@ -62,7 +38,7 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
 )(App);
 
