@@ -1,0 +1,13 @@
+.card{
+  max-width: 800px;
+  border: 1px solid #c0c0c0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  padding: 50px;
+  margin: 30px auto 30px auto;
+  &__image{
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+

@@ -3,19 +3,24 @@ import Header from './Header/Header'
 import ImageList from './ImageList/ImageList';
 import {onSearchSubmit} from "../store/actions";
 import connect from "react-redux/es/connect/connect";
+import ImageCard from "./ImageCard/ImageCard";
+import { Switch, Route } from "react-router-dom";
+import {Router} from 'react-router'
 
 class App extends Component {
-    // state = { images: [] };
-    // go into service
+    // shouldComponentUpdate(nextProps, nextState, nextContext) {
+    // }
 
     render() {
         const {images} = this.props;
-        // console.log(images);
+
         return(
             <div>
-                {/*<Header userSubmit={this.onSearchSubmit}/>*/}
                 <Header userSubmit={this.props.SearchSubmit}/>
-                <ImageList foundImages={images} />
+                {/*<ImageList foundImages={images} />*/}
+                    <Route exact path="/" render={() => <ImageList foundImages={images} userSubmit={this.props.SearchSubmit} />} />
+                    <Route path="/:id" render={(props) => <ImageCard images={images} {...props} />} />
+
             </div>
 
         )
@@ -41,6 +46,3 @@ export default connect(
     mapStateToProps,
     mapDispatchToProps
 )(App);
-
-// export default App
-// add connect to redux, get images from it
