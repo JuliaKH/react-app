@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './ImageList.scss'
 import ImageCard from '../ImageCard/ImageCard'
 import {Link} from "react-router-dom";
-import {Switch, Route} from "react-router-dom";
 
 class ImageList extends Component {
     constructor(props){
@@ -10,7 +9,7 @@ class ImageList extends Component {
 
     }
     componentDidMount() {
-        this.props.userSubmit('popular');
+        this.props.userSubmit();
     }
 
     render() {

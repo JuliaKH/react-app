@@ -8,8 +8,6 @@ import { Switch, Route } from "react-router-dom";
 import {Router} from 'react-router'
 
 class App extends Component {
-    // shouldComponentUpdate(nextProps, nextState, nextContext) {
-    // }
 
     render() {
         const {images} = this.props;

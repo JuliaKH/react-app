@@ -11,7 +11,7 @@ export const onSearchSubmit = ( title ) => {
         dispatch(addImagesStarted());
         const options = {
             params: {
-                query: title ,
+                query: title,
                 per_page: 20
             },
             headers: {
