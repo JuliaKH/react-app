@@ -1,12 +1,11 @@
 import axios from "axios";
-import {addImagesStarted, addImagesSuccess, addImagesFailure} from '../store/actions'
+import { getCollectionsStarted, getCollectionsSuccess, getCollectionsFailure } from '../store/actions'
 
-export const onSearchSubmit = ( title ) => {
+export const getCollections = () => {
     return dispatch => {
-        dispatch(addImagesStarted());
+        dispatch(getCollectionsStarted());
         const options = {
             params: {
-                query: title,
                 per_page: 20
             },
             headers: {
@@ -14,13 +13,13 @@ export const onSearchSubmit = ( title ) => {
             }
         };
         axios
-            .get('https://api.unsplash.com/search/photos', options)
+            .get('https://api.unsplash.com/collections', options)
             .then(res => {
-                dispatch(addImagesSuccess(res.data.results));
-                console.log(res.data.results);
+                dispatch(getCollectionsSuccess(res));
+                console.log(res);
             })
             .catch(err => {
-                dispatch(addImagesFailure(err.message));
+                dispatch(getCollectionsFailure(err.message));
                 console.log(err);
             });
     };
