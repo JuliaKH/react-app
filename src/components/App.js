@@ -1,30 +1,30 @@
 import React, { Component } from 'react'
+import connect from "react-redux/es/connect/connect";
+import { Switch, Route } from "react-router-dom";
 import Header from './Header/Header'
-import ImageList from './ImageList/ImageList';
+import Collections from "./Collections/Collections";
+import ImageList from '../pages/ImageList/ImageList';
+import ImageCard from "../pages/ImageCard/ImageCard";
+import CollectionPage from "../pages/CollectionPage";
+import Home from "../pages/Home";
 import { onSearchSubmit } from '../services/imageService'
 import { getCollections } from "../services/collectionService";
-import connect from "react-redux/es/connect/connect";
-import ImageCard from "./ImageCard/ImageCard";
-import { Switch, Route } from "react-router-dom";
-import Collections from "./Collections/Collections";
-import {CollectionReducer, ImageReducer} from "../store/reducers";
 
 class App extends Component {
 
     render() {
-        const {images} = this.props;
-
+        const {images, collections} = this.props;
         return(
             <div>
                 <Header userSubmit={this.props.SearchSubmit}/>
-                {/*<ImageList foundImages={images} />*/}
+                <Collections foundCollections = {collections} getCollections={this.props.getCollections} />
                 <Switch>
-                    <Route exact path="/" render={() => <ImageList foundImages={images} userSubmit={this.props.SearchSubmit} />} />
-                    <Route path="/collections" render={() => <Collections getCollections={this.props.getCollections} />} />
-                    <Route exact path="/:id" render={(props) => <ImageCard images={images} {...props} />} />
+                    <Route exact path="/" render={() => <Home foundImages={images} userSubmit={this.props.SearchSubmit} />} />
+                    <Route exact path="/images" render={() => <ImageList foundImages={images} userSubmit={this.props.SearchSubmit} />} />
+                    <Route path="/collection/:id" render={(props) => <CollectionPage {...props}/>} />
+                    <Route exact path="/images/:id" render={(props) => <ImageCard {...props} />} />
                 </Switch>
-
-    </div>
+             </div>
 
         )
     }

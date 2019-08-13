@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './Search.scss'
 import search from '../../assets/images/search.svg'
-import { Redirect } from 'react-router';
 import {withRouter} from 'react-router-dom'
+import PropTypes from "prop-types";
 
 class Search extends Component{
 
@@ -13,7 +13,7 @@ class Search extends Component{
     };
 
     goHome() {
-        this.props.history.push('/')
+        this.props.history.push('/images')
     }
 
     onFormSubmit = (event) => {
@@ -42,7 +42,9 @@ class Search extends Component{
 
     }
 }
-
+Search.propTypes = {
+    userSubmit: PropTypes.func
+};
 // const mapStateToProps = (state) => {
 //     return {
 //         value: state.value

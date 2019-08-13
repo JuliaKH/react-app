@@ -17,7 +17,7 @@ export const onSearchSubmit = ( title ) => {
             .get('https://api.unsplash.com/search/photos', options)
             .then(res => {
                 dispatch(addImagesSuccess(res.data.results));
-                console.log(res.data.results);
+                // console.log(res.data.results);
             })
             .catch(err => {
                 dispatch(addImagesFailure(err.message));
