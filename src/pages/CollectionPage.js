@@ -12,10 +12,19 @@ class CollectionPage extends Component {
         this.getChosenCollection();
     }
 
-    componentWillReceiveProps(nextProps){
-        this.getChosenCollection();
+    // componentWillReceiveProps(nextProps){
+    //     this.getChosenCollection();
+    // }
+    shouldComponentUpdate(nextProps) {
+        console.log(this.props.match.params.id);
+        return nextProps !== this.props;
+
     }
 
+    componentDidUpdate(nextProps, nextState){
+        console.log('did');
+        this.getChosenCollection();
+    }
     getChosenCollection = (id = this.props.match.params.id) => {
         const options = {
             params: {
