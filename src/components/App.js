@@ -14,6 +14,7 @@ class App extends Component {
 
     render() {
         const {images, collections} = this.props;
+        console.log(collections);
         return(
             <div>
                 <Header userSubmit={this.props.SearchSubmit}/>
@@ -21,7 +22,7 @@ class App extends Component {
                 <Switch>
                     <Route exact path="/" render={() => <Home foundImages={images} userSubmit={this.props.SearchSubmit} />} />
                     <Route exact path="/images" render={() => <ImageList foundImages={images} userSubmit={this.props.SearchSubmit} />} />
-                    <Route path="/collection/:id" render={(props) => <CollectionPage {...props}/>} />
+                    <Route path="/collections/:title/:id" render={(props) => <CollectionPage {...props}/>} />
                     <Route exact path="/images/:id" render={(props) => <ImageCard {...props} />} />
                 </Switch>
              </div>

@@ -29,6 +29,7 @@ class CollectionPage extends Component {
             .get(`https://api.unsplash.com/collections/${id}/photos`, options)
             .then(res => {
                 this.setState({photos: res.data});
+                console.log(res.data);
             })
             .catch(err => {
                 console.log(err);
@@ -41,6 +42,7 @@ class CollectionPage extends Component {
         return (
             <section className="images">
                 <div className="container">
+                    <h2 className="images__title">{this.props.match.params.title}</h2>
                     <div className="images__list">
                         {photos}
                     </div>

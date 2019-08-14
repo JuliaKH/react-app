@@ -1,10 +1,16 @@
 .container{
-  //max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 30px;
 }
 .images{
   padding: 30px 0;
+  &__title{
+    text-align: center;
+    color: #333333;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
   &__list{
     //display: flex;
     //align-items: baseline;

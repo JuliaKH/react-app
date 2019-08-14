@@ -27,9 +27,9 @@ class Collections extends Component{
     render() {
         this.collections = this.props.foundCollections.map((collect, index)=> {
             if(this.state.Color[index])
-            return <Link to={`/collection/${collect.id}`} key={collect.id} className="collections__link"
+            return <Link to={`/collections/${collect.title}/${collect.id}`} key={collect.id} className="collections__link"
                          style={{color: this.state.Color[index]}}><li><span>#</span>{collect.title}</li></Link>
-            else return <Link to={`/collection/${collect.id}`} key={collect.id} className="collections__link"
+            else return <Link to={`/collections/${collect.title}/${collect.id}`} key={collect.id} className="collections__link"
                        style={{color: this.state.Color[index - (index-1)]}}><li><span>#</span>{collect.title}</li></Link>
         });
         return(
