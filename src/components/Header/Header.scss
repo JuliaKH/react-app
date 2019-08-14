@@ -17,3 +17,12 @@ $header-color: #000;
   margin: 0 auto;
   padding: 0 20px;
 }
+
+@media screen and (max-width: 380px) {
+  .header{
+    &__logo{
+      display: none;
+    }
+  }
+}
+

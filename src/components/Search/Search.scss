@@ -27,3 +27,20 @@ $search-color: #333;
 
   }
 }
+
+@media screen and (max-width: 380px) {
+  .search{
+    max-height: 40px;
+    margin: 10px 0;
+    &__input{
+      padding: 8px;
+    }
+    &__button{
+      height: 40px;
+      & img{
+        max-width: 15px;
+      }
+
+    }
+  }
+}

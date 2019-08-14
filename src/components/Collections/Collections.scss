@@ -30,6 +30,7 @@ $login-btn-color: #363636;
     padding: 0;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     & span{
       opacity: .6;

@@ -1,5 +1,5 @@
 .container{
-  max-width: 1200px;
+  //max-width: 1400px;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -11,11 +11,11 @@
     //flex-flow: row wrap;
     //justify-content: space-between;
 
-    column-count: 3; // сколько колонок нужно?
+    column-count: 4; // сколько колонок нужно?
     column-gap: 1em; // промежуток между блоками (справа или слева)
 
     /* тоже самое с нужными префиксами на 18 марта 2016 */
-    -webkit-column-count: 3; -moz-column-count: 3;
+    -webkit-column-count: 4; -moz-column-count: 4;
     -webkit-column-gap: 1em; -moz-column-gap: 1em;
     &-img{
       max-width: 350px;
@@ -32,4 +32,36 @@
     }
   }
 }
+@media screen and (max-width: 970px) {
+  .images{
+    &__list{
+      column-count: 3;
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .images{
+    &__list{
+      column-count: 2;
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
 
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .images{
+    &__list{
+      column-count: 1;
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+
+      &-img{
+        display: block;
+        margin: 1em auto 1em auto;
+      }
+    }
+  }
+}
