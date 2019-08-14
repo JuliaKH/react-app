@@ -9,23 +9,14 @@ class CollectionPage extends Component {
     }
 
     componentDidMount() {
-        this.getChosenCollection();
+        this.getChosenCollection(this.props.match.params.id)
     }
 
-    // componentWillReceiveProps(nextProps){
-    //     this.getChosenCollection();
-    // }
-    shouldComponentUpdate(nextProps) {
-        console.log(this.props.match.params.id);
-        return nextProps !== this.props;
-
+    componentWillReceiveProps(nextProps){
+        this.getChosenCollection(nextProps.match.params.id);
     }
 
-    componentDidUpdate(nextProps, nextState){
-        console.log('did');
-        this.getChosenCollection();
-    }
-    getChosenCollection = (id = this.props.match.params.id) => {
+    getChosenCollection = (id) => {
         const options = {
             params: {
                 per_page: 20
@@ -44,7 +35,6 @@ class CollectionPage extends Component {
             });
     };
     render() {
-        console.log(this.state);
         const photos = this.state.photos.map((photo) => {
             return <a href="#" key={photo.id}><img src={photo.urls.regular} alt={photo.alt_description} className="images__list-img"/></a>
         });

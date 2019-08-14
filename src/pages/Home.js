@@ -11,7 +11,7 @@ class ImageList extends Component {
 
     render() {
         this.imgs = this.props.foundImages.map(img => {
-            return <Link to={img.id} key={img.id}> <img  src={img.urls.regular} alt={img.alt_description} className="images__list-img"/></Link>
+            return <Link to={`/images/${img.id}`} key={img.id}> <img  src={img.urls.regular} alt={img.alt_description} className="images__list-img"/></Link>
         });
         return (
             <section className="images">

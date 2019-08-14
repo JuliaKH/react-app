@@ -14,8 +14,7 @@ class Header extends Component{
                 <div className="header-container">
                     <Link to={'/'}><img src={logo} alt="logo" className="header__logo"/></Link>
                     <Search userSubmit={this.props.userSubmit} />
-                    {/*<Search userSubmit={this.props.userSubmit} />*/}
-                    <Link to={'/collections'}><CollectionsBtn/></Link>
+                    {/*<Link to={'/collections'}><CollectionsBtn/></Link>*/}
 
                 </div>
             </header>

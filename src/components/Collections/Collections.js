@@ -22,7 +22,6 @@ class Collections extends Component{
     }
     componentDidMount() {
         this.props.getCollections();
-        console.log(this.state.Color);
     }
 
     render() {
