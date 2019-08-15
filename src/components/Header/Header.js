@@ -23,6 +23,6 @@ class Header extends Component{
 }
 
 Header.propTypes = {
-    userSubmit: PropTypes.func
+    userSubmit: PropTypes.func.isRequired
 };
 export default Header

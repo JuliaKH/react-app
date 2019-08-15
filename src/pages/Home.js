@@ -3,7 +3,7 @@ import './ImageList/ImageList.scss'
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 
-class ImageList extends Component {
+class Home extends Component {
 
     componentDidMount() {
         this.props.userSubmit('popular');
@@ -24,8 +24,15 @@ class ImageList extends Component {
         );
     }
 }
-ImageList.propTypes = {
-    foundImages: PropTypes.array,
-    userSubmit:PropTypes.func
+
+Home.propTypes = {
+    foundImages: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        urls: PropTypes.shape({
+            regular: PropTypes.string
+        }),
+        alt_description: PropTypes.string
+    })).isRequired,
+    userSubmit:PropTypes.func.isRequired
 };
-export default ImageList;
+export default Home;

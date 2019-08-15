@@ -44,7 +44,10 @@ class Collections extends Component{
     }
 }
 Collections.propTypes = {
-    foundCollections: PropTypes.array,
-    getCollections: PropTypes.func
+    foundCollections: PropTypes.arrayOf(PropTypes.shape({
+        title: PropTypes.string,
+        id: PropTypes.number
+    })).isRequired,
+    getCollections: PropTypes.func.isRequired
 };
 export default Collections;

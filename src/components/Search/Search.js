@@ -39,7 +39,7 @@ class Search extends Component{
     }
 }
 Search.propTypes = {
-    userSubmit: PropTypes.func
+    userSubmit: PropTypes.func.isRequired
 };
 
 export default withRouter(Search)

@@ -20,6 +20,12 @@ const ImageList = (props) => {
     )
 };
 ImageList.propTypes = {
-    foundImages: PropTypes.array
+    foundImages: PropTypes.PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        urls: PropTypes.shape({
+            regular: PropTypes.string
+        }),
+        alt_description: PropTypes.string
+    })).isRequired
 };
 export default ImageList;
