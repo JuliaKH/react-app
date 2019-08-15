@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CollectionPage  should render correctly 1`] = `
+<section
+  className="images"
+>
+  <div
+    className="container"
+  >
+    <h2
+      className="images__title"
+    />
+    <div
+      className="images__list"
+    />
+  </div>
+</section>
+`;
+
+exports[`ImageList  should render correctly 1`] = `
+<section
+  className="images"
+>
+  <div
+    className="container"
+  >
+    <h2
+      className="images__title"
+    />
+    <div
+      className="images__list"
+    />
+  </div>
+</section>
+`;

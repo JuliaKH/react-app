@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './ImageList/ImageList.scss'
+import '../ImageList/ImageList.scss'
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -27,7 +27,7 @@ class Home extends Component {
 
 Home.propTypes = {
     foundImages: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number,
+        id: PropTypes.string,
         urls: PropTypes.shape({
             regular: PropTypes.string
         }),

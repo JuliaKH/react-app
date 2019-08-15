@@ -5,8 +5,8 @@ import Header from './Header/Header'
 import Collections from "./Collections/Collections";
 import ImageList from '../pages/ImageList/ImageList';
 import ImageCard from "../pages/ImageCard/ImageCard";
-import CollectionPage from "../pages/CollectionPage";
-import Home from "../pages/Home";
+import CollectionPage from "../pages/CollectionPage/CollectionPage";
+import Home from "../pages/Home/Home";
 import { onSearchSubmit } from '../services/imageService'
 import { getCollections } from "../services/collectionService";
 
@@ -14,7 +14,6 @@ class App extends Component {
 
     render() {
         const {images, collections} = this.props;
-        console.log(collections);
         return(
             <div>
                 <Header userSubmit={this.props.SearchSubmit}/>

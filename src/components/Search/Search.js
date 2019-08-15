@@ -29,7 +29,7 @@ class Search extends Component{
             <form className="search" onSubmit={this.onFormSubmit}>
                 <input type="text" className="search__input"
                        placeholder={this.searchPlaceholderText}
-                       value={this.props.value}
+                       value={this.state.value}
                        onChange={this.onInputChange}
                 />
                 <button type="submit" className="search__button"><img src={search} alt="search"/></button>

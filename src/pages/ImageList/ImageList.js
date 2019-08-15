@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './ImageList.scss'
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
+import ImageCard from "../ImageCard/ImageCard";
 
 const ImageList = (props) => {
     const imgs = props.foundImages.map(img => {
@@ -21,11 +22,12 @@ const ImageList = (props) => {
 };
 ImageList.propTypes = {
     foundImages: PropTypes.PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.number,
+        id: PropTypes.string,
         urls: PropTypes.shape({
             regular: PropTypes.string
         }),
         alt_description: PropTypes.string
     })).isRequired
 };
+
 export default ImageList;

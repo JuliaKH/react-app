@@ -7,7 +7,6 @@ import {
     GET_COLLECTIONS_FAILURE
 } from './actionTypes';
 
-import axios from 'axios';
 
 export const addImagesSuccess = images => ({
     type: ADD_IMAGES_SUCCESS,

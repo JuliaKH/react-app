@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from "axios";
-import './ImageList/ImageList.scss'
+import '../ImageList/ImageList.scss'
+import {Link} from "react-router-dom";
+import ImageCard from "../ImageCard/ImageCard";
 
 class CollectionPage extends Component {
     constructor(props) {
@@ -29,15 +31,13 @@ class CollectionPage extends Component {
             .get(`https://api.unsplash.com/collections/${id}/photos`, options)
             .then(res => {
                 this.setState({photos: res.data});
-                console.log(res.data);
             })
             .catch(err => {
-                console.log(err);
             });
     };
     render() {
         const photos = this.state.photos.map((photo) => {
-            return <a href="#" key={photo.id}><img src={photo.urls.regular} alt={photo.alt_description} className="images__list-img"/></a>
+            return <Link to={`/images/${photo.id}`} key={photo.id}><img src={photo.urls.regular} alt={photo.alt_description} className="images__list-img"/></Link>
         });
         return (
             <section className="images">
@@ -51,5 +51,7 @@ class CollectionPage extends Component {
         );
     }
 }
-
+CollectionPage.defaultProps = {
+    match: { params: { code: 123 } }
+};
 export default CollectionPage;

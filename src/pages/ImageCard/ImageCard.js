@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './ImageCard.scss'
 import axios from "axios";
+import PropTypes from "prop-types";
 
 class ImageCard extends Component {
     constructor(props){
@@ -26,10 +27,8 @@ class ImageCard extends Component {
             .get(`https://api.unsplash.com/photos/${id}`, options)
             .then(res => {
                 this.setState({image: res.data});
-                console.log(res.data)
             })
             .catch(err => {
-                console.log(err);
             });
     };
     render() {
@@ -41,5 +40,7 @@ class ImageCard extends Component {
         );
     }
 }
-
+ImageCard.defaultProps = {
+    match: { params: { code: 123 } },
+};
 export default ImageCard;
