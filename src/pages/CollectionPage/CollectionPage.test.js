@@ -1,9 +1,8 @@
 import React from 'react';
-import { render, mount } from 'enzyme'
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
-import {BrowserRouter} from "react-router-dom";
 import CollectionPage from "./CollectionPage";
+import { render } from 'enzyme'
 import axios from "axios";
 
 describe('CollectionPage ', () => {
@@ -33,7 +32,7 @@ describe('CollectionPage ', () => {
 
     it('should call componentDidMount', () => {
         jest.spyOn(CollectionPage.prototype, 'componentDidMount');
-        const wrapper = shallow(<CollectionPage />);
+        const wrapper = render(<CollectionPage />);
         expect(CollectionPage.prototype.componentDidMount.mock.calls.length).toBe(1);
     });
 

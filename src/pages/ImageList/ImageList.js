@@ -2,7 +2,6 @@ import React from 'react';
 import './ImageList.scss'
 import {Link} from "react-router-dom";
 import PropTypes from "prop-types";
-import ImageCard from "../ImageCard/ImageCard";
 
 const ImageList = (props) => {
     const imgs = props.foundImages.map(img => {
@@ -27,7 +26,8 @@ ImageList.propTypes = {
             regular: PropTypes.string
         }),
         alt_description: PropTypes.string
-    })).isRequired
+    })).isRequired,
+    userSubmit: PropTypes.func.isRequired
 };
 
 export default ImageList;

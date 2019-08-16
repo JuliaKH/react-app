@@ -20,14 +20,14 @@ describe('Search ', () => {
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
-    it('calls userSubmit prop function when form is submitted', () => {
+    it('should call userSubmit prop function when form is submitted', () => {
         const wrapper = mount( <BrowserRouter><Search userSubmit={mockUserSubmit}/></BrowserRouter>);
         const form = wrapper.find('form');
         form.simulate('submit');
         expect(mockUserSubmit).toHaveBeenCalledTimes(1);
     });
 
-    it('should user text is echoed in input', () => {
+    it('should user text be echoed in input', () => {
         const wrapper = mount(<BrowserRouter><Search userSubmit={mockUserSubmit}/></BrowserRouter>);
         wrapper.find("input").simulate("change", {target: {value: "hello"}});
         expect(wrapper.find("input").props().value).toEqual("hello");

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CollectionPage  should render correctly 1`] = `
+exports[`Home  should render correctly 1`] = `
 <section
   className="images"
 >

@@ -9,6 +9,7 @@ import CollectionPage from "../pages/CollectionPage/CollectionPage";
 import Home from "../pages/Home/Home";
 import { onSearchSubmit } from '../services/imageService'
 import { getCollections } from "../services/collectionService";
+import PropTypes from "prop-types";
 
 class App extends Component {
 
@@ -39,7 +40,10 @@ const mapStateToProps = (state) => {
         collect_error: state.CollectionReducer.collect_error
     };
 };
-
+App.propTypes = {
+    SearchSubmit: PropTypes.func.isRequired,
+    getCollections: PropTypes.func.isRequired
+};
 const mapDispatchToProps = dispatch => {
     return {
         SearchSubmit: todo => {

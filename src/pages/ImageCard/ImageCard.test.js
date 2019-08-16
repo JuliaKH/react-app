@@ -2,7 +2,6 @@ import React from 'react';
 import ImageCard  from "./ImageCard";
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
-import {BrowserRouter} from "react-router-dom";
 import axios from 'axios';
 
 describe('ImageCard ', () => {
@@ -39,14 +38,5 @@ describe('ImageCard ', () => {
         const wrapper = shallow(<ImageCard />);
         expect(ImageCard.prototype.componentDidMount.mock.calls.length).toBe(1);
     });
-
-    // it('should set image to state', () => {
-    //     const getSpy = jest.spyOn(axios, 'get');
-    //     const wrapper = shallow(<ImageCard />);
-    //     jest.runAllTimers();
-    //     // component.update();
-    //     expect(wrapper.state().image.urls).toEqual(true);
-    //
-    // });
 
 });

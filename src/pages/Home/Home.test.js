@@ -1,11 +1,10 @@
 import React from 'react';
-import { render, mount } from 'enzyme'
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
 import Home from "./Home";
 
-describe('CollectionPage ', () => {
+describe('Home ', () => {
 
     const mockUserSubmit = jest.fn(() => 'Set new query');
     const mockFoundImages = [

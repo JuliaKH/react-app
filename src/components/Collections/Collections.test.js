@@ -1,6 +1,5 @@
 import React from 'react';
 import Collections  from "./Collections";
-import { render, mount } from 'enzyme'
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import {BrowserRouter} from "react-router-dom";

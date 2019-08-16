@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './ImageCard.scss'
 import axios from "axios";
-import PropTypes from "prop-types";
 
 class ImageCard extends Component {
     constructor(props){
